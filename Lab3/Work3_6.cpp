@@ -1,0 +1,12 @@
+/* Program 3_6 : Use condition operator */
+#include <iostream>
+using namespace std;
+int main()
+{
+int Number;
+cout << "Enter number : " ;
+cin >> Number;
+cout << Number << " is " << ((Number % 2) == 0 ? "even " : "odd ") ;
+cout << " number." << endl;
+return (0);
+}

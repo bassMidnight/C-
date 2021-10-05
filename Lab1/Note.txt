@@ -1,0 +1,7 @@
+ท้ายบท
+1.
+ไม่error แสดง
+I love C++ 
+ very much
+
+2.
