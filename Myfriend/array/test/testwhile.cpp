@@ -182,8 +182,8 @@ int main() {
     //InP();
     //OutP_1_Val();
     Fecth_Data();
-    //Shw_All_data();
-    Insert_data();
+    Shw_All_data();
+    //Insert_data();
     //cout << OutPutData[1][5];
 
     return(0);

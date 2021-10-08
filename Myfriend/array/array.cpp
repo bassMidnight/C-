@@ -4,18 +4,10 @@
 
 using namespace std;
 
-const int SIZE = 22;
-int grades[SIZE];
-
-int calgrade(int grades) {
-    
-    if(grades > 50){
-        cout <<" : over50 : " ;
-    }else{
-        cout <<" : lower50 : " ;
-    }
-
-}
+const int SIZER = 4;
+const int SIZEC = 6;
+int grades[SIZER][SIZEC];
+int i, j;
 
 void readData() {
 
@@ -26,12 +18,13 @@ void readData() {
 
     if (inFile.is_open())
     {
-        for (int i = 0; i < SIZE; i++)
-        {
-            inFile >> grades[i];
-            cout << endl << grades[i] << " " ;
-            calgrade(grades[i]);
+        for ( i = 0; i < SIZER; i++)
+        {  
+            for( j = 0 ; j <= SIZEC ; j++)
+            inFile >> grades[i][j];
+            cout << grades[i][j] << " " ;
         }
+        cout <<  endl ;
 
         inFile.close(); // CLose input file
     }
@@ -45,6 +38,6 @@ void readData() {
 int main()
 {
     readData();
-    cout << endl << "grades[5] = " << grades[5]; 
+    //cout << endl << "grades[5] = " << grades[5]; 
     return 0;
 }
