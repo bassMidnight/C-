@@ -38,15 +38,19 @@ int main()
         cout << "\n . . . Exit Program . . .\n";
     return(0);
 }
+
+
 float Area(const float Radius)
 {
     return(3.14159F * Radius * Radius);
 }
-    float Area(const float Length, const float Widht)
+
+float Area(const float Length, const float Widht)
 {
-return(Length * Widht);
+    return(Length * Widht);
 }
-    void DisplayMenu()
+
+void DisplayMenu()
 {
     cout << endl;
     cout << " Program Calculate Area " << endl;
