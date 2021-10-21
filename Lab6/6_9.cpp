@@ -1,5 +1,5 @@
 #include <iostream>
-#include <string>
+#include <string.h>
 using namespace std;
 void SortString(char Data[ ][20]);
 int main()
