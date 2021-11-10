@@ -2,6 +2,7 @@
 #include <string.h>
 using namespace std;
 void SortString(char Data[ ][20]);
+
 int main()
 {
     char City[5][20];
@@ -17,6 +18,7 @@ int main()
     cout << i+1 << " " << City[i] << endl;
     return(0);
 }
+
 void SortString(char Data[][20])
 {
     int i,j,flag;

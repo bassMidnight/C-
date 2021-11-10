@@ -4,24 +4,24 @@
 #include <fstream>
 using namespace std;
 
-string Data_Raw[][6] = {
-    {"1", "test", "20", "30", "200"},
-    {"1", "test", "20", "30", "200"}
-};
+string Name_prod[30][2];
+double Detail_prod[30][5];
 
-string inFileName = "data/product.txt";
+string inFile_NamePro = "data/Name_prod.txt";
+string inFile_DetailPro = "data/Detail_prod.txt";
 
 void menu();
 int select_menu(int choice);
 void show_all();
 int buy();
 int Admin_Menu();
+void Fect_Data();
 
 
 int main()
 {   
     int choice ;
-    //Fect_Data();
+    Fect_Data();
     menu();
     cin >> choice;
     select_menu(choice);
@@ -57,13 +57,12 @@ int select_menu(int choice){
         break;
 
     case 2:
-        cout <<"menu 2 ";
         show_all();
         buy();
         break;    
     
     case 3:
-        cout <<"menu 3 ";
+        cout << "menu 3 ";
         Admin_Menu();
         break;
     
@@ -73,45 +72,98 @@ int select_menu(int choice){
     return 0;
 }
 
+void Fect_Data(){
+
+//------------------Name----------------------//
+    ifstream inFile;
+    inFile.open(inFile_NamePro);
+
+    if (inFile.is_open()){
+
+        for (int i = 1 ; i <= 100 ; i++){
+
+            for(int j = 1 ; j < 2 ; j++){
+
+                inFile >> Name_prod[i][j];
+
+                if(Name_prod[i][1] == ""){
+                    break;
+                }
+
+            }
+
+        }
+
+    }
+    inFile.close();
+
+//----------------Detail-----------------------//
+    ifstream inFile_Detail;
+    inFile_Detail.open(inFile_DetailPro);
+
+    if (inFile_Detail.is_open()){
+
+        for (int i = 1 ; i <= 100 ; i++){
+
+            for(int j = 1 ; j <= 5 ; j++){
+
+                inFile_Detail >> Detail_prod[i][j];
+
+                if(Detail_prod[i][1] == 0){
+                    break;
+                }
+
+            }
+
+        }
+
+    }
+    inFile.close();
+
+}
+
 int Admin_Menu(){
 
     return 0 ;
 }
+
 void show_all(){
-    bool flag = 1;
-    ifstream inFile;
-    inFile.open(inFileName);
+    bool Flag_Name = 1;
 
-    if (inFile.is_open() && flag == 1)
-    {
+    cout << "+" << setfill('-') << setw(15) << "Name" << setfill('-') << setw(25) << "IDProduct" << setfill('-') << setw(25) << "Priece" << setfill('-') << setw(15) << "eqt" << setfill('-') << setw(10) << "+" <<  endl;     
+    cout << "+" << setfill('-') << setw(90) << "+" << endl;
 
-        for (int i = 0 ; i <= 100 ; i++) {
+    for(int i = 1 ; i < 100 ; i++){
 
-            for(int j = 0 ; j < 6 ; j++){
-
-                inFile >> Data_Raw[i][j];
-                
-                if(Data_Raw[i][0] == "0"){
-                    flag = 0;
-                    break;
-                }
-                cout << Data_Raw[i][j] << " ";
-
-            }
-
-        cout << "Row is " << i << endl;
-
+        if(Name_prod[i][1] == ""){
+            Flag_Name = 0;
         }
 
-        inFile.close();
-        
-    } else { //Error message
-        cout << "Can't find file " << inFileName << endl;
+        if(Flag_Name == 1){
+
+            cout << setfill(' ') << setw(17) <<  Name_prod[i][1] ;
+            cout << setfill(' ') << setw(20) <<  Detail_prod[i][1] ;
+            cout << setfill(' ') << setw(28) <<  Detail_prod[i][3] ;
+            cout << setfill(' ') << setw(16) <<  Detail_prod[i][4] << endl;
+
+        }
+       
     }
 
 }
 
 int buy(){
+
+    int ID = 1 , EQT = 0 ;
+    cout <<"Enter ID Eqt (12 20) | Enter ( 0 0 ) for Exit " << endl;
+
+    cin >> ID >> EQT ;
+    
+    while (ID != 0)
+    {
+        cin >> ID >> EQT ;
+    }
+    
     return 0;
 
 

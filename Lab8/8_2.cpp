@@ -46,8 +46,10 @@ void GetandWrite(ofstream &OutFile){
         cout << "Enter Score : ";
         cin >> Score;
         // write value( intgeter number ) to output file
-        OutFile << Id << " " << Name << " ";
-        OutFile << SurName << " " << Score << endl;
+        OutFile << Id << " " << Name << " " << SurName << " " << Score << endl;
+        if( n != 3){
+            OutFile << endl;
+        }
     }
     cout << endl;
 }

@@ -37,11 +37,18 @@ int main()
     cout << "Now open file " << Filename << " for read." << endl;
 
     // Read name from input file
+    /*
     for(int n = 1 ; n <= 10 ; n++) {
         InFile >> Value;
         cout << setw(5) << Value;
     }
-    
+    */
+
+    while(!InFile.eof()){
+        InFile >> Value;
+        cout << setw(5) << Value;
+    }
+
     cout << endl;
     InFile.close(); // close input file
     cout << "Now close file " << Filename << ".\n\n";

@@ -25,6 +25,7 @@ int main()
         cout << "Exit program." << endl;
     return(0);
 }
+
 int Menu()
     {
     string line(25,'=');
@@ -42,8 +43,9 @@ int Menu()
     cin >> Choose;
     return(Choose);
 }
-void AddStudent(string FN)
-{
+
+void AddStudent(string FN){
+
     // open file for write and append
     ofstream OutFile(FN.c_str(), ios_base::out | ios_base::app);
     if (OutFile.is_open()) {
@@ -54,6 +56,7 @@ void AddStudent(string FN)
         cin >> Id;
         cout << "Enter name : ";
         cin >> Name;
+        
         // write data to file student.dat
         OutFile << Id << " " << Name << endl;
         OutFile.close();
@@ -66,7 +69,7 @@ void AddStudent(string FN)
 }
 
 void DisplayStudent(string FN){
-    
+
     ifstream InFile(FN.c_str(), ios_base::in); // open file for read
     if (InFile.is_open()) {
         string Id, Name;

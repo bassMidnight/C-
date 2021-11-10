@@ -4,7 +4,7 @@
 using namespace std;
 
 void getdata(int std_number);
-void sortdata();
+void sortdata(int std_number);
 void average(int std_number);
 void displaydata(int std_number);
 
@@ -121,4 +121,9 @@ void average(int std_number){
     ASumTt = SumTt/std_number;
 
     cout << "Average of mark \t " << ASumT1 <<"\t"<< ASumT2 <<"\t"<< ASumT3 <<"\t"<< ASumTt ;
+}
+
+void sortdata(int std_number){
+
+
 }
